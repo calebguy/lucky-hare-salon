@@ -15,6 +15,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Lucky Hare Salon",
 	description: "Lucky Hare Salon",
+	openGraph: {
+		title: "Lucky Hare Salon",
+		description: "Lucky Hare Salon",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Lucky Hare Salon",
+		description: "Lucky Hare Salon",
+	},
 };
 
 export default function RootLayout({
