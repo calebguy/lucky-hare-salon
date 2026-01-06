@@ -17,7 +17,7 @@ export default function Home() {
 				width={800}
 				height={1035}
 				priority
-				className="max-h-[80vh] w-auto animate-fade-in"
+				className="max-h-[100vh] w-auto animate-fade-in"
 			/>
 		</div>
 	);
