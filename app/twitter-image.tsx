@@ -9,13 +9,7 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default async function Image() {
-	const cedarvilleCursive = fetch(
-		new URL(
-			"https://fonts.gstatic.com/s/cedarvillecursive/v17/yYL00g_a2veiHDToR2Fj2f1c8R8tq.woff2",
-		),
-	).then((res) => res.arrayBuffer());
-
+export default function Image() {
 	return new ImageResponse(
 		<div
 			style={{
@@ -29,8 +23,8 @@ export default async function Image() {
 		>
 			<div
 				style={{
-					fontSize: 120,
-					fontFamily: "Cedarville Cursive",
+					fontSize: 80,
+					fontStyle: "italic",
 					color: "black",
 				}}
 			>
@@ -39,13 +33,6 @@ export default async function Image() {
 		</div>,
 		{
 			...size,
-			fonts: [
-				{
-					name: "Cedarville Cursive",
-					data: await cedarvilleCursive,
-					style: "normal",
-				},
-			],
-		},
+		}
 	);
 }
