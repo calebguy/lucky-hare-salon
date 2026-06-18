@@ -21,9 +21,9 @@ export const business = {
 export const contact = {
 	// TODO: publish phone number (shared business line or a primary cell).
 	phone: "TODO_PHONE", // e.g. "(512) 555-0123"
-	// Group inbox that reaches both stylists. Used as the primary "book" channel.
-	bookingEmail: "booking@luckyharesalon.com",
-	helloEmail: "hello@luckyharesalon.com",
+	// Group inbox that reaches both stylists (Zoho group). Primary contact channel.
+	bookingEmail: "info@luckyharesalon.com",
+	helloEmail: "info@luckyharesalon.com",
 };
 
 export const location = {
@@ -82,7 +82,7 @@ export const stylists: Stylist[] = [
 		bio: "TODO: Devon's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO
 		photo: "", // TODO: add photo to /public/stylists/ then set "/stylists/devon.jpg"
-		bookingNote: "Text or email booking@luckyharesalon.com to request an appointment with Devon.",
+		bookingNote: "Text or email info@luckyharesalon.com to request an appointment with Devon.",
 	},
 	{
 		name: "Neva",
@@ -91,7 +91,7 @@ export const stylists: Stylist[] = [
 		bio: "TODO: Neva's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO
 		photo: "", // TODO: add photo to /public/stylists/ then set "/stylists/neva.jpg"
-		bookingNote: "Text or email booking@luckyharesalon.com to request an appointment with Neva.",
+		bookingNote: "Text or email info@luckyharesalon.com to request an appointment with Neva.",
 	},
 ];
 
