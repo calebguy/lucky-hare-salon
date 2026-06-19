@@ -28,7 +28,7 @@ export default function Contact() {
 						<h2 className="font-dreamboat text-2xl text-blue">Reach the studio</h2>
 						<p className="mt-2 text-sm text-foreground/70">
 							Devon and Neva each book their own clients — call or text the stylist you’d
-							like to see (numbers on the right), or email us and we’ll point you to the
+							like to see, or email us and we’ll point you to the
 							right chair.
 						</p>
 						<ul className="mt-4 space-y-3 text-foreground/80">
