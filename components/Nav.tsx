@@ -10,7 +10,7 @@ const links = [
 
 export default function Nav() {
 	return (
-		<header className="w-full bg-sage">
+		<header className="sticky top-0 z-40 w-full border-b border-blue/10 bg-sage/90 backdrop-blur-sm">
 			<nav className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-5 md:flex-row md:justify-between">
 				<Link href="/" aria-label="Lucky Hare Salon — home">
 					<PrimaryLogo className="w-24 text-blue transition-colors duration-300 hover:text-brown md:w-28" />

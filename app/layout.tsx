@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Nunito_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { business, contact, location, socials, SITE_URL } from "./site";
+import { business, contact, location, socials, stylists, SITE_URL } from "./site";
 
+// Display/script font — reserved for the logo, headings, and short accents.
 const dreamboat = localFont({
 	src: "../fonts/TAYDreamboat.otf",
 	variable: "--font-dreamboat",
@@ -15,6 +19,13 @@ const dreamboatThin = localFont({
 	variable: "--font-dreamboat-thin",
 });
 
+// Clean, legible body font for paragraphs, lists, and small UI text.
+const body = Nunito_Sans({
+	subsets: ["latin"],
+	variable: "--font-body",
+	display: "swap",
+});
+
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
 	title: {
@@ -22,6 +33,7 @@ export const metadata: Metadata = {
 		template: `%s — ${business.name}`,
 	},
 	description: business.description,
+	alternates: { canonical: "/" },
 	openGraph: {
 		title: business.name,
 		description: business.description,
@@ -44,7 +56,9 @@ const jsonLd = {
 	name: business.name,
 	description: business.description,
 	url: SITE_URL,
-	telephone: contact.phone,
+	// Each stylist takes clients on their own number; surface the first as the
+	// listing's primary phone and list both as employees with their own numbers.
+	telephone: stylists[0]?.phone,
 	email: contact.bookingEmail,
 	address: {
 		"@type": "PostalAddress",
@@ -54,7 +68,13 @@ const jsonLd = {
 		postalCode: location.zip,
 		addressCountry: "US",
 	},
-	sameAs: [socials.instagram],
+	employee: stylists.map((s) => ({
+		"@type": "Person",
+		name: s.name,
+		jobTitle: s.role,
+		telephone: s.phone,
+	})),
+	sameAs: [socials.instagram, ...stylists.map((s) => s.instagram)],
 	image: `${SITE_URL}/opengraph-image.png`,
 };
 
@@ -66,15 +86,25 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${dreamboat.variable} ${dreamboatThin.variable} flex min-h-screen flex-col bg-sage antialiased`}
+				className={`${dreamboat.variable} ${dreamboatThin.variable} ${body.variable} flex min-h-screen flex-col bg-sage font-body antialiased`}
 			>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
+				<a
+					href="#main"
+					className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-blue focus:px-4 focus:py-2 focus:text-sage"
+				>
+					Skip to content
+				</a>
 				<Nav />
-				<main className="flex-1">{children}</main>
+				<main id="main" className="flex-1">
+					{children}
+				</main>
 				<Footer />
+				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);

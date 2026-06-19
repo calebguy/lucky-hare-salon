@@ -5,6 +5,7 @@ import { business, services, contact } from "../site";
 export const metadata: Metadata = {
 	title: "Services",
 	description: `Cuts, color, extensions, and styling at ${business.name} in Austin, TX.`,
+	alternates: { canonical: "/services" },
 };
 
 export default function Services() {

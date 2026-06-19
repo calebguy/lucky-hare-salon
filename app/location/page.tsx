@@ -5,6 +5,7 @@ import { business, location, hours, fullAddress } from "../site";
 export const metadata: Metadata = {
 	title: "Visit",
 	description: `Directions, parking, and hours for ${business.name} in Austin, TX.`,
+	alternates: { canonical: "/location" },
 };
 
 export default function Location() {

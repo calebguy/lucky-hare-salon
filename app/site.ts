@@ -19,9 +19,9 @@ export const business = {
 };
 
 export const contact = {
-	// TODO: publish phone number (shared business line or a primary cell).
-	phone: "TODO_PHONE", // e.g. "(512) 555-0123"
-	// Group inbox that reaches both stylists (Zoho group). Primary contact channel.
+	// Devon and Neva each take clients on their OWN business number — there is no
+	// single salon line. Per-stylist numbers live on each Stylist below; the site
+	// shows each person's own number. This shared email reaches both of them.
 	bookingEmail: "info@luckyharesalon.com",
 	helloEmail: "info@luckyharesalon.com",
 };
@@ -63,6 +63,8 @@ export const socials = {
 export type Stylist = {
 	name: string;
 	role: string;
+	// This stylist's own business number — clients call/text them directly.
+	phone: string;
 	specialties: string[];
 	bio: string;
 	instagram: string; // full URL
@@ -78,6 +80,7 @@ export const stylists: Stylist[] = [
 	{
 		name: "Devon",
 		role: "Hairstylist",
+		phone: "TODO_DEVON_PHONE", // e.g. "(512) 555-0123"
 		specialties: ["TODO", "TODO"], // e.g. "Lived-in color", "Cuts"
 		bio: "TODO: Devon's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO
@@ -87,6 +90,7 @@ export const stylists: Stylist[] = [
 	{
 		name: "Neva",
 		role: "Hairstylist",
+		phone: "TODO_NEVA_PHONE", // e.g. "(512) 555-0123"
 		specialties: ["TODO", "TODO"],
 		bio: "TODO: Neva's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO

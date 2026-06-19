@@ -7,6 +7,7 @@ import { business, stylists } from "../site";
 export const metadata: Metadata = {
 	title: "About",
 	description: `Meet the stylists behind ${business.name}, a private hair studio in Austin, TX.`,
+	alternates: { canonical: "/about" },
 };
 
 export default function About() {
@@ -31,9 +32,9 @@ export default function About() {
 								{s.photo ? (
 									<Image
 										src={s.photo}
-										alt={s.name}
+										alt={`Portrait of ${s.name}, hairstylist at Lucky Hare Salon`}
 										fill
-										sizes="200px"
+										sizes="(min-width: 768px) 200px, 192px"
 										className="object-cover"
 									/>
 								) : (

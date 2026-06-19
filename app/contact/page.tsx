@@ -6,6 +6,7 @@ import { business, contact, location, hours, stylists, socials } from "../site";
 export const metadata: Metadata = {
 	title: "Contact",
 	description: `Get in touch with ${business.name} in Austin, TX to book an appointment.`,
+	alternates: { canonical: "/contact" },
 };
 
 export default function Contact() {
@@ -25,16 +26,12 @@ export default function Contact() {
 					{/* Ways to reach us */}
 					<div className="rounded-lg bg-white p-6 shadow-sm">
 						<h2 className="font-dreamboat text-2xl text-blue">Reach the studio</h2>
+						<p className="mt-2 text-sm text-foreground/70">
+							Devon and Neva each book their own clients — call or text the stylist you’d
+							like to see (numbers on the right), or email us and we’ll point you to the
+							right chair.
+						</p>
 						<ul className="mt-4 space-y-3 text-foreground/80">
-							<li>
-								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
-									Call or text
-								</span>
-								<br />
-								<a href={`tel:${contact.phone}`} className="text-blue underline">
-									{contact.phone}
-								</a>
-							</li>
 							<li>
 								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
 									Email
@@ -69,14 +66,19 @@ export default function Contact() {
 								<li key={s.name}>
 									<p className="font-dreamboat text-xl text-blue">{s.name}</p>
 									<p className="mt-1 text-sm text-foreground/70">{s.bookingNote}</p>
-									<Link
-										href={s.instagram}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-sm text-blue underline"
-									>
-										{s.name} on Instagram
-									</Link>
+									<div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+										<a href={`tel:${s.phone}`} className="text-blue underline">
+											Call or text {s.phone}
+										</a>
+										<Link
+											href={s.instagram}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-blue underline"
+										>
+											Instagram
+										</Link>
+									</div>
 								</li>
 							))}
 						</ul>

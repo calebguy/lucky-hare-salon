@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PrimaryLogo from "@/components/icons/PrimaryLogo";
 import Illustration from "@/components/icons/Illustration";
 import StarCharm from "@/components/icons/StarCharm";
@@ -15,7 +16,7 @@ export default function Home() {
 	return (
 		<div className="bg-sage">
 			{/* Hero */}
-			<section className="flex flex-col items-center px-6 pt-10 pb-16 text-center">
+			<section className="animate-fade-in flex flex-col items-center px-6 pt-10 pb-16 text-center">
 				<PrimaryLogo className="w-52 text-blue md:w-72" />
 				<p className="mt-6 max-w-xl font-dreamboat-thin text-lg uppercase tracking-widest text-brown md:text-xl">
 					{business.tagline}
@@ -55,7 +56,20 @@ export default function Home() {
 				<div className="mx-auto mt-10 grid max-w-3xl gap-8 md:grid-cols-2">
 					{stylists.map((s) => (
 						<div key={s.name} className="rounded-lg bg-white p-6 text-center shadow-sm">
-							<p className="font-dreamboat text-2xl text-blue">{s.name}</p>
+							<div className="relative mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-light-blue/40">
+								{s.photo ? (
+									<Image
+										src={s.photo}
+										alt={`Portrait of ${s.name}, hairstylist at Lucky Hare Salon`}
+										fill
+										sizes="96px"
+										className="object-cover"
+									/>
+								) : (
+									<span className="font-dreamboat text-3xl text-blue">{s.name.charAt(0)}</span>
+								)}
+							</div>
+							<p className="mt-4 font-dreamboat text-2xl text-blue">{s.name}</p>
 							<p className="mt-1 font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
 								{s.role}
 							</p>
