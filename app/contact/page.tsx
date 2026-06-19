@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StarCharm from "@/components/icons/StarCharm";
-import { business, contact, location, hours, stylists, socials } from "../site";
+import { business, contact, location, availability, stylists, socials } from "../site";
 
 export const metadata: Metadata = {
 	title: "Contact",
@@ -106,15 +106,12 @@ export default function Contact() {
 						</Link>
 					</div>
 					<div>
-						<h2 className="font-dreamboat text-2xl text-blue">When</h2>
-						<ul className="mt-3 space-y-1 text-foreground/80">
-							{hours.map((h) => (
-								<li key={h.day} className="flex justify-between gap-4">
-									<span>{h.day}</span>
-									<span>{h.hours}</span>
-								</li>
-							))}
-						</ul>
+						<h2 className="font-dreamboat text-2xl text-blue">Appointments</h2>
+						<p className="mt-3 leading-relaxed text-foreground/80">
+							{availability.summary}
+							{availability.days ? ` · ${availability.days}` : ""}. Lucky Hare is a
+							private studio — reach out and we’ll find a time that works.
+						</p>
 					</div>
 				</div>
 			</section>

@@ -15,7 +15,7 @@ export default function Footer() {
 				</div>
 
 				<div className="font-dreamboat-thin text-sm uppercase tracking-widest text-light-blue">
-					<p className="mb-3 text-sage">Visit</p>
+					<p className="mb-3 text-sage">Find us</p>
 					<address className="not-italic leading-relaxed normal-case tracking-normal">
 						{location.street}
 						<br />

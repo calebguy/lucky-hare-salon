@@ -7,7 +7,7 @@ import {
 	business,
 	contact,
 	location,
-	hours,
+	availability,
 	stylists,
 	reviews,
 } from "./site";
@@ -89,11 +89,11 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* Visit snapshot */}
+			{/* Studio snapshot */}
 			<section className="bg-light-blue/40 px-6 py-16">
 				<div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
 					<div>
-						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Visit the studio</h2>
+						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">The studio</h2>
 						<address className="mt-4 not-italic leading-relaxed text-foreground/80">
 							{location.street}
 							<br />
@@ -109,15 +109,18 @@ export default function Home() {
 						</Link>
 					</div>
 					<div>
-						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Hours</h2>
-						<ul className="mt-4 space-y-1 text-foreground/80">
-							{hours.map((h) => (
-								<li key={h.day} className="flex justify-between gap-6">
-									<span>{h.day}</span>
-									<span>{h.hours}</span>
-								</li>
-							))}
-						</ul>
+						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Appointments</h2>
+						<p className="mt-4 leading-relaxed text-foreground/80">
+							Lucky Hare is a private studio — {availability.summary.toLowerCase()}
+							{availability.days ? `, ${availability.days}` : ""}. Reach out and
+							we’ll find a time that works for you.
+						</p>
+						<Link
+							href="/contact"
+							className="mt-4 inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+						>
+							Request an appointment
+						</Link>
 					</div>
 				</div>
 			</section>

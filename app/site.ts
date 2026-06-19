@@ -43,17 +43,16 @@ export const location = {
 	appleMapsUrl: "https://maps.apple.com/?q=Lucky+Hare+Salon+Austin+TX",
 };
 
-// Day-by-day hours. Use "Closed" or "By appointment" where relevant.
-// TODO: confirm real hours for each day.
-export const hours: { day: string; hours: string }[] = [
-	{ day: "Sunday", hours: "Closed" },
-	{ day: "Monday", hours: "TODO" },
-	{ day: "Tuesday", hours: "TODO" },
-	{ day: "Wednesday", hours: "TODO" },
-	{ day: "Thursday", hours: "TODO" },
-	{ day: "Friday", hours: "TODO" },
-	{ day: "Saturday", hours: "TODO" },
-];
+// Lucky Hare is a private studio — appointment only, no walk-ins. We deliberately
+// do NOT publish open "business hours" (that invites drop-ins). Devon and Neva keep
+// a shared schedule and book by request.
+export const availability = {
+	// Short line shown wherever hours used to appear.
+	summary: "By appointment only",
+	// Optional: the general days they typically take clients. Shown only if set —
+	// leave "" to show just the summary. e.g. "Tuesday–Saturday".
+	days: "",
+};
 
 export const socials = {
 	// TODO: salon Instagram handle/url (or leave null and link stylists individually).

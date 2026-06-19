@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { business, location, hours, fullAddress } from "../site";
+import { business, location, availability, fullAddress } from "../site";
 
 export const metadata: Metadata = {
-	title: "Visit",
-	description: `Directions, parking, and hours for ${business.name} in Austin, TX.`,
+	title: "Location",
+	description: `Directions and parking for ${business.name}, a private by-appointment hair studio in Austin, TX.`,
 	alternates: { canonical: "/location" },
 };
 
@@ -17,8 +17,12 @@ export default function Location() {
 	return (
 		<div className="bg-sage">
 			<section className="px-6 pt-12 pb-10 text-center">
-				<h1 className="font-dreamboat text-4xl text-blue md:text-5xl">Visit us</h1>
-				<address className="mt-4 not-italic text-lg leading-relaxed text-foreground/80">
+				<h1 className="font-dreamboat text-4xl text-blue md:text-5xl">Find the studio</h1>
+				<p className="mx-auto mt-4 max-w-xl text-foreground/70">
+					Lucky Hare is a private studio, {availability.summary.toLowerCase()}. Here’s where
+					we are and how to find us when you come in for your appointment.
+				</p>
+				<address className="mt-6 not-italic text-lg leading-relaxed text-foreground/80">
 					{location.street}, {location.suite}
 					<br />
 					{location.city}, {location.state} {location.zip}
@@ -66,15 +70,12 @@ export default function Location() {
 						<p className="mt-3 leading-relaxed text-foreground/80">{location.parking}</p>
 					</div>
 					<div className="rounded-lg bg-white p-6 shadow-sm">
-						<h2 className="font-dreamboat text-2xl text-blue">Hours</h2>
-						<ul className="mt-3 space-y-1 text-foreground/80">
-							{hours.map((h) => (
-								<li key={h.day} className="flex justify-between gap-4">
-									<span>{h.day}</span>
-									<span>{h.hours}</span>
-								</li>
-							))}
-						</ul>
+						<h2 className="font-dreamboat text-2xl text-blue">Appointments</h2>
+						<p className="mt-3 leading-relaxed text-foreground/80">
+							{availability.summary}
+							{availability.days ? ` · ${availability.days}` : ""}. We’re a private
+							studio, so every visit is booked ahead — reach out and we’ll set up a time.
+						</p>
 					</div>
 				</div>
 			</section>

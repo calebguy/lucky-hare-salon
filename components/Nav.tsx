@@ -4,7 +4,7 @@ import PrimaryLogo from "@/components/icons/PrimaryLogo";
 const links = [
 	{ href: "/about", label: "About" },
 	{ href: "/services", label: "Services" },
-	{ href: "/location", label: "Visit" },
+	{ href: "/location", label: "Location" },
 	{ href: "/contact", label: "Contact" },
 ];
 
