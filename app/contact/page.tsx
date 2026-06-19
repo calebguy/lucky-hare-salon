@@ -106,7 +106,7 @@ export default function Contact() {
 						</Link>
 					</div>
 					<div>
-						<h2 className="font-dreamboat text-2xl text-blue">Appointments</h2>
+						<h2 className="font-dreamboat text-2xl text-blue">Booking</h2>
 						<p className="mt-3 leading-relaxed text-foreground/80">
 							{availability.summary}
 							{availability.days ? ` · ${availability.days}` : ""}. Lucky Hare is a

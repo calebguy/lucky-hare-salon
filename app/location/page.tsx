@@ -70,7 +70,7 @@ export default function Location() {
 						<p className="mt-3 leading-relaxed text-foreground/80">{location.parking}</p>
 					</div>
 					<div className="rounded-lg bg-white p-6 shadow-sm">
-						<h2 className="font-dreamboat text-2xl text-blue">Appointments</h2>
+						<h2 className="font-dreamboat text-2xl text-blue">Booking</h2>
 						<p className="mt-3 leading-relaxed text-foreground/80">
 							{availability.summary}
 							{availability.days ? ` · ${availability.days}` : ""}. We’re a private

@@ -109,7 +109,7 @@ export default function Home() {
 						</Link>
 					</div>
 					<div>
-						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Appointments</h2>
+						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Booking</h2>
 						<p className="mt-4 leading-relaxed text-foreground/80">
 							Lucky Hare is a private studio — {availability.summary.toLowerCase()}
 							{availability.days ? `, ${availability.days}` : ""}. Reach out and
