@@ -66,7 +66,7 @@ export default function About() {
 										href="/contact"
 										className="text-blue underline transition-colors hover:text-brown"
 									>
-										Book with {s.name}
+										Book with {s.firstName}
 									</Link>
 								</div>
 							</div>

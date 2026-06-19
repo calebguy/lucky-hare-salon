@@ -61,7 +61,8 @@ export const socials = {
 };
 
 export type Stylist = {
-	name: string;
+	name: string; // full name, shown as the heading (e.g. "Devon Williams")
+	firstName: string; // friendly first name for CTAs ("Book with Devon")
 	role: string;
 	// This stylist's own business number — clients call/text them directly.
 	phone: string;
@@ -78,7 +79,8 @@ export type Stylist = {
 // TODO: real bios, specialties, Instagram handles, and photos.
 export const stylists: Stylist[] = [
 	{
-		name: "Devon",
+		name: "Devon Williams",
+		firstName: "Devon",
 		role: "Hairstylist",
 		phone: "TODO_DEVON_PHONE", // e.g. "(512) 555-0123"
 		specialties: ["TODO", "TODO"], // e.g. "Lived-in color", "Cuts"
@@ -88,7 +90,8 @@ export const stylists: Stylist[] = [
 		bookingNote: "Text or email info@luckyharesalon.com to request an appointment with Devon.",
 	},
 	{
-		name: "Neva",
+		name: "Neva Gregory",
+		firstName: "Neva",
 		role: "Hairstylist",
 		phone: "TODO_NEVA_PHONE", // e.g. "(512) 555-0123"
 		specialties: ["TODO", "TODO"],

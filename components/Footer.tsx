@@ -39,7 +39,7 @@ export default function Footer() {
 						{stylists.map((s) => (
 							<li key={s.name}>
 								<a href={`tel:${s.phone}`} className="underline hover:text-sage">
-									{s.name} · {s.phone}
+									{s.firstName} · {s.phone}
 								</a>
 							</li>
 						))}
