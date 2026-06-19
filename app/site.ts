@@ -86,7 +86,7 @@ export const stylists: Stylist[] = [
 		bio: "TODO: Devon's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO
 		photo: "", // TODO: add photo to /public/stylists/ then set "/stylists/devon.jpg"
-		bookingNote: "Text or email info@luckyharesalon.com to request an appointment with Devon.",
+		bookingNote: "Text, email info@luckyharesalon.com, or DM on Instagram to request an appointment with Devon.",
 	},
 	{
 		name: "Neva Gregory",
@@ -97,7 +97,7 @@ export const stylists: Stylist[] = [
 		bio: "TODO: Neva's bio — background, philosophy, what clients can expect.",
 		instagram: "https://instagram.com/", // TODO
 		photo: "", // TODO: add photo to /public/stylists/ then set "/stylists/neva.jpg"
-		bookingNote: "Text or email info@luckyharesalon.com to request an appointment with Neva.",
+		bookingNote: "Text, email info@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
 	},
 ];
 

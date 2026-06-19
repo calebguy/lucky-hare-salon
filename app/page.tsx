@@ -148,7 +148,7 @@ export default function Home() {
 			<section className="bg-blue px-6 py-16 text-center text-sage">
 				<h2 className="font-dreamboat text-3xl md:text-4xl">Ready for a fresh look?</h2>
 				<p className="mt-3 font-dreamboat-thin uppercase tracking-widest text-light-blue">
-					Text, call, or email to book
+					Text, call, email, or DM to book
 				</p>
 				<div className="mt-6 flex flex-wrap items-center justify-center gap-4">
 					<a

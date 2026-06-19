@@ -16,8 +16,8 @@ export default function Contact() {
 				<StarCharm className="mx-auto w-12 text-orange" />
 				<h1 className="mt-4 font-dreamboat text-4xl text-blue md:text-5xl">Get in touch</h1>
 				<p className="mx-auto mt-4 max-w-xl text-foreground/70">
-					We book by text, call, and email — no online scheduler. Reach out and we’ll find a
-					time that works. New clients are always welcome.
+					We book by text, call, email, and Instagram DM — no online scheduler. Reach out and
+					we’ll find a time that works. New clients are always welcome.
 				</p>
 			</section>
 
@@ -52,7 +52,7 @@ export default function Contact() {
 									rel="noopener noreferrer"
 									className="text-blue underline"
 								>
-									Follow & DM us
+									Follow or DM us to book
 								</Link>
 							</li>
 						</ul>
