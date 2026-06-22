@@ -110,6 +110,11 @@ export default function Home() {
 									sizes="(min-width: 768px) 16vw, 33vw"
 									className="object-cover transition-transform duration-500 group-hover:scale-105"
 								/>
+								<div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-2 pb-1.5 pt-6">
+									<span className="font-dreamboat-thin text-[9px] uppercase tracking-wide text-white/95 md:text-[10px]">
+										Hair by {img.stylist}
+									</span>
+								</div>
 							</Link>
 						))}
 					</div>

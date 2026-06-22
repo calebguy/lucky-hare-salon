@@ -36,6 +36,11 @@ export default function Gallery() {
 								sizes="(min-width: 768px) 33vw, 50vw"
 								className="object-cover transition-transform duration-500 group-hover:scale-105"
 							/>
+							<div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-3 pb-2 pt-8">
+								<span className="font-dreamboat-thin text-[11px] uppercase tracking-wide text-white/95 md:text-xs">
+									Hair by {img.stylist}
+								</span>
+							</div>
 						</div>
 					))}
 				</div>
