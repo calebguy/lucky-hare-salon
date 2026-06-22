@@ -86,7 +86,7 @@ export const stylists: Stylist[] = [
 		role: "Hairstylist",
 		phone: "(512) 369-2670",
 		email: "devon@luckyharesalon.com",
-		specialties: ["Fantasy color", "Blondes"],
+		specialties: ["Fantasy color", "Lived-in blondes"],
 		bio: "I'm Devon! Originally from the Reno/Tahoe area in Nevada, I've called Austin home for the past five years. An introvert at heart, I strive to create a calm space where you can just be yourself — a safe space to express who you are, no matter how you identify.",
 		instagram: "https://instagram.com/devluckyhare",
 		photo: "/stylists/devon.webp",
