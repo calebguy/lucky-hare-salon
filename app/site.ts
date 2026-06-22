@@ -15,7 +15,7 @@ export const business = {
 	tagline: "An intimate hair studio in Austin, Texas",
 	// One–two sentence description used for SEO and the homepage intro.
 	description:
-		"Lucky Hare Salon is a private, two-chair studio in Austin, TX where Devon and Neva offer personalized cuts, color, and styling in a relaxed, unhurried setting.",
+		"Lucky Hare Salon is a private, by-appointment studio in Austin, TX where Devon and Neva see one client at a time — personalized cuts, color, and styling in a relaxed, unhurried setting.",
 };
 
 export const contact = {

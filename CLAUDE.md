@@ -4,8 +4,10 @@ Quick-start context for Claude (and humans) working in this repo.
 
 ## What this is
 
-The informational website for **Lucky Hare Salon** — a private, two-chair hair studio
-in Austin, TX run by stylists **Devon Williams** and **Neva Gregory**. It's a marketing
+The informational website for **Lucky Hare Salon** — a private hair studio
+in Austin, TX run by stylists **Devon Williams** and **Neva Gregory**. It's an
+intimate, one-on-one space: a single chair that Devon and Neva share by booking
+clients at separate times (NOT a two-chair salon — don't describe it that way). It's a marketing
 site (About, Services, Location, Contact), **not** a booking app: there is **no online
 scheduler**. Clients book by **text, call, email (`info@luckyharesalon.com`), or Instagram
 DM**, and the studio is **by appointment only** (no walk-ins, no posted business hours).

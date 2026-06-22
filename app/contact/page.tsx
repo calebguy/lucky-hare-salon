@@ -29,7 +29,7 @@ export default function Contact() {
 						<p className="mt-2 text-sm text-foreground/70">
 							Devon and Neva each book their own clients — call or text the stylist you’d
 							like to see, or email us and we’ll point you to the
-							right chair.
+							right stylist.
 						</p>
 						<ul className="mt-4 space-y-3 text-foreground/80">
 							<li>
