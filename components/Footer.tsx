@@ -48,16 +48,18 @@ export default function Footer() {
 								{contact.bookingEmail}
 							</a>
 						</li>
-						<li>
-							<Link
-								href={socials.instagram}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="underline hover:text-sage"
-							>
-								Instagram
-							</Link>
-						</li>
+						{socials.instagram && (
+							<li>
+								<Link
+									href={socials.instagram}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline hover:text-sage"
+								>
+									Instagram
+								</Link>
+							</li>
+						)}
 					</ul>
 				</div>
 			</div>

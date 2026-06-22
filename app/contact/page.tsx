@@ -41,20 +41,22 @@ export default function Contact() {
 									{contact.bookingEmail}
 								</a>
 							</li>
-							<li>
-								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
-									Instagram
-								</span>
-								<br />
-								<Link
-									href={socials.instagram}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-blue underline"
-								>
-									Follow or DM us to book
-								</Link>
-							</li>
+							{socials.instagram && (
+								<li>
+									<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
+										Instagram
+									</span>
+									<br />
+									<Link
+										href={socials.instagram}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue underline"
+									>
+										Follow or DM us to book
+									</Link>
+								</li>
+							)}
 						</ul>
 					</div>
 

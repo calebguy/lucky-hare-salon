@@ -74,7 +74,7 @@ const jsonLd = {
 		jobTitle: s.role,
 		telephone: s.phone,
 	})),
-	sameAs: [socials.instagram, ...stylists.map((s) => s.instagram)],
+	sameAs: [socials.instagram, ...stylists.map((s) => s.instagram)].filter(Boolean),
 	image: `${SITE_URL}/opengraph-image.png`,
 };
 

@@ -9,6 +9,7 @@ import {
 	location,
 	availability,
 	stylists,
+	gallery,
 	reviews,
 } from "./site";
 
@@ -88,6 +89,40 @@ export default function Home() {
 					))}
 				</div>
 			</section>
+
+			{/* Our work — teaser strip linking to the full gallery */}
+			{gallery.length > 0 && (
+				<section className="bg-white px-6 py-16">
+					<h2 className="text-center font-dreamboat text-3xl text-blue md:text-4xl">
+						Our work
+					</h2>
+					<div className="mx-auto mt-10 grid max-w-5xl grid-cols-3 gap-3 md:grid-cols-6 md:gap-4">
+						{gallery.slice(0, 6).map((img) => (
+							<Link
+								key={img.src}
+								href="/gallery"
+								className="group relative aspect-[3/4] overflow-hidden rounded-lg bg-light-blue/40 shadow-sm"
+							>
+								<Image
+									src={img.src}
+									alt={img.alt}
+									fill
+									sizes="(min-width: 768px) 16vw, 33vw"
+									className="object-cover transition-transform duration-500 group-hover:scale-105"
+								/>
+							</Link>
+						))}
+					</div>
+					<div className="mt-8 text-center">
+						<Link
+							href="/gallery"
+							className="inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+						>
+							View the gallery
+						</Link>
+					</div>
+				</section>
+			)}
 
 			{/* Studio snapshot */}
 			<section className="bg-light-blue/40 px-6 py-16">

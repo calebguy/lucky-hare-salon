@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw owner-submitted content (originals carry EXIF/GPS — only the
+# cleaned, EXIF-stripped exports under /public belong in the repo)
+LuckyHareSalon-devon/
