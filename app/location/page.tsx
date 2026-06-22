@@ -63,7 +63,19 @@ export default function Location() {
 				<div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
 					<div className="rounded-lg bg-white p-6 shadow-sm">
 						<h2 className="font-dreamboat text-2xl text-blue">Finding the suite</h2>
-						<p className="mt-3 leading-relaxed text-foreground/80">{location.findUs}</p>
+						<div className="mt-3 space-y-4 text-foreground/80">
+							{location.findUs.routes.map((r) => (
+								<div key={r.from}>
+									<p className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
+										{r.from}
+									</p>
+									<p className="mt-1 leading-relaxed">{r.steps}</p>
+								</div>
+							))}
+							<p className="border-t border-blue/10 pt-4 leading-relaxed">
+								{location.findUs.atDoor}
+							</p>
+						</div>
 					</div>
 					<div className="rounded-lg bg-white p-6 shadow-sm">
 						<h2 className="font-dreamboat text-2xl text-blue">Parking</h2>

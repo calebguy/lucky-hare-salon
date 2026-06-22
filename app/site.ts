@@ -32,9 +32,22 @@ export const location = {
 	city: "Austin",
 	state: "TX",
 	zip: "78756",
-	// Customer-facing directions for finding the suite once on-site.
-	findUs:
-		"From the parking garage: exit and walk up the steps, past the pilates studio, then through the door into the lobby. From street parking: head to the front of the building facing Burnet Rd (there's no entry from the side door). At the entrance there's a small screen — scroll to your stylist's name and call, and we'll come out to meet you.",
+	// Customer-facing directions for finding the suite once on-site. Two ways in
+	// depending on where you parked, then a shared final step at the door.
+	findUs: {
+		routes: [
+			{
+				from: "From the parking garage",
+				steps: "Exit and walk up the steps, past the pilates studio, then through the door into the lobby.",
+			},
+			{
+				from: "From street parking",
+				steps: "Head to the front of the building facing Burnet Rd — there's no entry from the side door.",
+			},
+		],
+		atDoor:
+			"At the entrance there's a small screen — scroll to your stylist's name and call, and we'll come out to meet you.",
+	},
 	parking:
 		"There's a free parking garage attached to the building, plus street parking on Lawnmont St.",
 	// Map links. Replace once the listing exists; a plain query works meanwhile.
