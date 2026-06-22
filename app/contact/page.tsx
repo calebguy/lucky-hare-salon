@@ -72,6 +72,9 @@ export default function Contact() {
 										<a href={`tel:${s.phone}`} className="text-blue underline">
 											Call or text {s.phone}
 										</a>
+										<a href={`mailto:${s.email}`} className="text-blue underline">
+											{s.email}
+										</a>
 										<Link
 											href={s.instagram}
 											target="_blank"

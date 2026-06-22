@@ -66,6 +66,9 @@ export type Stylist = {
 	role: string;
 	// This stylist's own business number — clients call/text them directly.
 	phone: string;
+	// This stylist's own mailbox (real Zoho address). The shared info@ in
+	// `contact` reaches both; use this for booking a specific person.
+	email: string;
 	specialties: string[];
 	bio: string;
 	instagram: string; // full URL
@@ -82,17 +85,19 @@ export const stylists: Stylist[] = [
 		firstName: "Devon",
 		role: "Hairstylist",
 		phone: "(512) 369-2670",
+		email: "devon@luckyharesalon.com",
 		specialties: ["Fantasy color", "Blondes"],
 		bio: "I'm Devon! Originally from the Reno/Tahoe area in Nevada, I've called Austin home for the past five years. An introvert at heart, I strive to create a calm space where you can just be yourself — a safe space to express who you are, no matter how you identify.",
 		instagram: "https://instagram.com/devluckyhare",
 		photo: "/stylists/devon.webp",
-		bookingNote: "Text, email info@luckyharesalon.com, or DM on Instagram to request an appointment with Devon.",
+		bookingNote: "Text, email devon@luckyharesalon.com, or DM on Instagram to request an appointment with Devon.",
 	},
 	{
 		name: "Neva Gregory",
 		firstName: "Neva",
 		role: "Hairstylist",
 		phone: "(785) 840-6441",
+		email: "neva@luckyharesalon.com",
 		// TODO: Neva — real specialties pending (left empty hides the line on About).
 		specialties: [],
 		// TODO: Neva — real bio pending.
@@ -101,7 +106,7 @@ export const stylists: Stylist[] = [
 		instagram: "https://instagram.com/neva.does.hair",
 		// TODO: Neva — photo pending (shows an initials fallback until added).
 		photo: "",
-		bookingNote: "Text, email info@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
+		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
 	},
 ];
 
@@ -227,7 +232,6 @@ export const gallery: GalleryImage[] = [
 	{ src: "/gallery/devon-10.webp", alt: "Soft violet money piece on dark hair", stylist: "Devon" },
 	{ src: "/gallery/devon-13.webp", alt: "Rich red-burgundy color, front view", stylist: "Devon" },
 	{ src: "/gallery/devon-14.webp", alt: "Dark bob blended to blonde ends", stylist: "Devon" },
-	{ src: "/gallery/devon-15.webp", alt: "Sleek dark hair with micro bangs and a hint of green", stylist: "Devon" },
 ];
 
 // Real reviews only — leave empty until the Google Business Profile has some.
