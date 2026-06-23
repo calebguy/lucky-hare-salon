@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import StarCharm from "@/components/icons/StarCharm";
 import { business, contact, location, availability, stylists, socials } from "../site";
 
@@ -32,8 +33,26 @@ export default function Contact() {
 					<div className="mt-6 grid gap-8 md:grid-cols-2">
 						{stylists.map((s) => (
 							<div key={s.name}>
-								<p className="font-dreamboat text-xl text-blue">{s.name}</p>
-								<p className="mt-1 text-sm text-foreground/70">{s.bookingNote}</p>
+								<div className="flex items-center gap-4">
+									<div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-light-blue/40">
+										{s.photo ? (
+											<Image
+												src={s.photo}
+												alt={`Portrait of ${s.name}, hairstylist at Lucky Hare Salon`}
+												fill
+												sizes="64px"
+												className="object-cover"
+											/>
+										) : (
+											// Initials fallback until a real photo is added to /public/stylists
+											<span className="font-dreamboat text-2xl text-blue">
+												{s.name.charAt(0)}
+											</span>
+										)}
+									</div>
+									<p className="font-dreamboat text-xl text-blue">{s.name}</p>
+								</div>
+								<p className="mt-3 text-sm text-foreground/70">{s.bookingNote}</p>
 								<div className="mt-3 flex flex-col gap-1 text-sm">
 									<a href={`tel:${s.phone}`} className="text-blue underline">
 										Call or text {s.phone}
