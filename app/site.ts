@@ -19,9 +19,13 @@ export const business = {
 };
 
 export const contact = {
-	// Devon and Neva each take clients on their OWN business number — there is no
-	// single salon line. Per-stylist numbers live on each Stylist below; the site
-	// shows each person's own number. This shared email reaches both of them.
+	// Main studio line: a call menu that routes to a stylist (press 1 Devon,
+	// 2 Neva), then forwards to their cell. CALL-ONLY — do NOT present it as
+	// textable (the number isn't SMS/10DLC-registered). This is the single
+	// public number for listings + the footer (NAP consistency). Each stylist's
+	// own cell (for texting/direct booking) still lives on each Stylist below.
+	phone: "(737) 353-7755",
+	// Shared email — reaches both Devon and Neva.
 	bookingEmail: "info@luckyharesalon.com",
 	helloEmail: "info@luckyharesalon.com",
 };

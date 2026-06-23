@@ -56,9 +56,9 @@ const jsonLd = {
 	name: business.name,
 	description: business.description,
 	url: SITE_URL,
-	// Each stylist takes clients on their own number; surface the first as the
-	// listing's primary phone and list both as employees with their own numbers.
-	telephone: stylists[0]?.phone,
+	// Primary phone = the studio line (matches listings for NAP consistency);
+	// each stylist is also listed as an employee with their own cell below.
+	telephone: contact.phone,
 	email: contact.bookingEmail,
 	address: {
 		"@type": "PostalAddress",
