@@ -21,9 +21,10 @@ export const business = {
 export const contact = {
 	// Main studio line: a call menu that routes to a stylist (press 1 Devon,
 	// 2 Neva), then forwards to their cell. CALL-ONLY — do NOT present it as
-	// textable (the number isn't SMS/10DLC-registered). This is the single
-	// public number for listings + the footer (NAP consistency). Each stylist's
-	// own cell (for texting/direct booking) still lives on each Stylist below.
+	// textable (the number isn't SMS/10DLC-registered). LISTINGS-ONLY: this is
+	// the single public number for Google/Apple/Yelp + the JSON-LD telephone
+	// (NAP consistency). It is intentionally NOT shown on the site — the site
+	// surfaces each stylist's own cell directly (see each Stylist below).
 	phone: "(737) 353-7755",
 	// Shared email — reaches both Devon and Neva.
 	bookingEmail: "info@luckyharesalon.com",
@@ -115,11 +116,8 @@ export const stylists: Stylist[] = [
 		role: "Hairstylist",
 		phone: "(785) 840-6441",
 		email: "neva@luckyharesalon.com",
-		// TODO: Neva — real specialties pending (left empty hides the line on About).
-		specialties: [],
-		// TODO: Neva — real bio pending.
-		bio: "Neva's bio is on the way — check back soon.",
-		// From the form's handle list; confirm with Neva when she fills in her section.
+		specialties: ["Dimensional blondes & brunettes", "Lived-in, low-maintenance color", "Cuts"],
+		bio: "I'm Neva. I moved to Austin right after graduating high school in Lawrence, KS and started doing hair shortly after. I specialize in low-maintenance, lived-in color and cuts — my goal is to give you hair that needs minimal styling and upkeep. I love working out of a private suite where you can be comfortable, whatever that looks like for you.",
 		instagram: "https://instagram.com/neva.does.hair",
 		// TODO: Neva — photo pending (shows an initials fallback until added).
 		photo: "",
@@ -161,19 +159,6 @@ export const serviceMenus: StylistMenu[] = [
 					{ name: "Lowlights", price: "$200" },
 					{ name: "Single process (grey coverage)", price: "$100" },
 					{ name: "Single process + gloss", price: "$125" },
-				],
-			},
-			{
-				category: "Lightening",
-				items: [
-					{ name: "Blonding", price: "$330" },
-					{ name: "Full lightening", price: "$260" },
-					{ name: "Partial", price: "$230" },
-					{ name: "Mini", price: "$200" },
-					{ name: "Grey coverage + full", price: "$295" },
-					{ name: "Grey coverage + partial", price: "$275" },
-					{ name: "Grey coverage + mini", price: "$255" },
-					{ name: "Highs & lows", price: "$270" },
 				],
 			},
 			{
@@ -223,9 +208,21 @@ export const serviceMenus: StylistMenu[] = [
 	},
 	{
 		stylist: "Neva",
-		// TODO: Neva — service menu & pricing pending.
-		note: "Neva's service menu is coming soon — call or text her to talk through what you're looking for.",
-		categories: [],
+		categories: [
+			{
+				category: "Lightening",
+				items: [
+					{ name: "Blonding", price: "$330" },
+					{ name: "Full lightening", price: "$260" },
+					{ name: "Partial", price: "$230" },
+					{ name: "Mini", price: "$200" },
+					{ name: "Grey coverage + full", price: "$295" },
+					{ name: "Grey coverage + partial", price: "$275" },
+					{ name: "Grey coverage + mini", price: "$255" },
+					{ name: "Highs & lows", price: "$270" },
+				],
+			},
+		],
 	},
 ];
 

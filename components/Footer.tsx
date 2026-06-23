@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Emblem from "@/components/icons/Emblem";
-import { business, contact, location, socials, fullAddress } from "@/app/site";
+import { business, contact, location, socials, stylists, fullAddress } from "@/app/site";
 
 export default function Footer() {
 	return (
@@ -36,11 +36,13 @@ export default function Footer() {
 				<div className="font-dreamboat-thin text-sm uppercase tracking-widest text-light-blue">
 					<p className="mb-3 text-sage">Reach us</p>
 					<ul className="space-y-2 normal-case tracking-normal">
-						<li>
-							<a href={`tel:${contact.phone}`} className="underline hover:text-sage">
-								Call {contact.phone}
-							</a>
-						</li>
+						{stylists.map((s) => (
+							<li key={s.name}>
+								<a href={`tel:${s.phone}`} className="underline hover:text-sage">
+									{s.firstName} · {s.phone}
+								</a>
+							</li>
+						))}
 						<li>
 							<a href={`mailto:${contact.bookingEmail}`} className="underline hover:text-sage">
 								{contact.bookingEmail}

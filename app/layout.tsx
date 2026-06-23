@@ -56,8 +56,10 @@ const jsonLd = {
 	name: business.name,
 	description: business.description,
 	url: SITE_URL,
-	// Primary phone = the studio line (matches listings for NAP consistency);
-	// each stylist is also listed as an employee with their own cell below.
+	// Studio line, kept here in structured data ONLY (not shown anywhere on the
+	// visible site) so it matches the Google/Apple/Yelp listings for NAP
+	// consistency. We steer people to call/text the stylists directly instead;
+	// each stylist is listed as an employee with their own cell below.
 	telephone: contact.phone,
 	email: contact.bookingEmail,
 	address: {

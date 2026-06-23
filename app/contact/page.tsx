@@ -25,22 +25,12 @@ export default function Contact() {
 				<div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
 					{/* Ways to reach us */}
 					<div className="rounded-lg bg-white p-6 shadow-sm">
-						<h2 className="font-dreamboat text-2xl text-blue">Reach the studio</h2>
+						<h2 className="font-dreamboat text-2xl text-blue">Reach us</h2>
 						<p className="mt-2 text-sm text-foreground/70">
-							Call the studio line and choose Devon or Neva, text or DM a stylist
-							directly, or email us — whatever’s easiest.
+							Call or text a stylist directly, DM us on Instagram, or email — whatever’s
+							easiest. New clients are always welcome.
 						</p>
 						<ul className="mt-4 space-y-3 text-foreground/80">
-							<li>
-								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
-									Call the studio
-								</span>
-								<br />
-								<a href={`tel:${contact.phone}`} className="text-blue underline">
-									{contact.phone}
-								</a>
-								<p className="text-sm text-foreground/60">Press 1 for Devon, 2 for Neva.</p>
-							</li>
 							<li>
 								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
 									Email
