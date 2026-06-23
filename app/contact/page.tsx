@@ -22,71 +22,59 @@ export default function Contact() {
 			</section>
 
 			<section className="px-6 pb-16">
-				<div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
-					{/* Ways to reach us */}
-					<div className="rounded-lg bg-white p-6 shadow-sm">
-						<h2 className="font-dreamboat text-2xl text-blue">Reach us</h2>
-						<p className="mt-2 text-sm text-foreground/70">
-							Call or text a stylist directly, DM us on Instagram, or email — whatever’s
-							easiest. New clients are always welcome.
-						</p>
-						<ul className="mt-4 space-y-3 text-foreground/80">
-							<li>
-								<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
-									Email
-								</span>
-								<br />
-								<a href={`mailto:${contact.bookingEmail}`} className="text-blue underline">
-									{contact.bookingEmail}
-								</a>
-							</li>
-							{socials.instagram && (
-								<li>
-									<span className="font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
-										Instagram
-									</span>
-									<br />
+				<div className="mx-auto max-w-3xl rounded-lg bg-white p-6 shadow-sm md:p-8">
+					<h2 className="font-dreamboat text-2xl text-blue">Book a stylist</h2>
+					<p className="mt-2 text-sm text-foreground/70">
+						Reach whichever of us you’d like — call or text directly, DM on Instagram, or
+						email. New clients are always welcome.
+					</p>
+
+					<div className="mt-6 grid gap-8 md:grid-cols-2">
+						{stylists.map((s) => (
+							<div key={s.name}>
+								<p className="font-dreamboat text-xl text-blue">{s.name}</p>
+								<p className="mt-1 text-sm text-foreground/70">{s.bookingNote}</p>
+								<div className="mt-3 flex flex-col gap-1 text-sm">
+									<a href={`tel:${s.phone}`} className="text-blue underline">
+										Call or text {s.phone}
+									</a>
+									<a href={`mailto:${s.email}`} className="text-blue underline">
+										{s.email}
+									</a>
 									<Link
-										href={socials.instagram}
+										href={s.instagram}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-blue underline"
 									>
-										Follow or DM us to book
+										Instagram
 									</Link>
-								</li>
-							)}
-						</ul>
+								</div>
+							</div>
+						))}
 					</div>
 
-					{/* Book a specific stylist */}
-					<div className="rounded-lg bg-white p-6 shadow-sm">
-						<h2 className="font-dreamboat text-2xl text-blue">Book a stylist</h2>
-						<ul className="mt-4 space-y-4">
-							{stylists.map((s) => (
-								<li key={s.name}>
-									<p className="font-dreamboat text-xl text-blue">{s.name}</p>
-									<p className="mt-1 text-sm text-foreground/70">{s.bookingNote}</p>
-									<div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-										<a href={`tel:${s.phone}`} className="text-blue underline">
-											Call or text {s.phone}
-										</a>
-										<a href={`mailto:${s.email}`} className="text-blue underline">
-											{s.email}
-										</a>
-										<Link
-											href={s.instagram}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-blue underline"
-										>
-											Instagram
-										</Link>
-									</div>
-								</li>
-							))}
-						</ul>
-					</div>
+					<p className="mt-6 border-t border-light-blue/40 pt-4 text-sm text-foreground/70">
+						Prefer email? Reach us both at{" "}
+						<a href={`mailto:${contact.bookingEmail}`} className="text-blue underline">
+							{contact.bookingEmail}
+						</a>
+						{socials.instagram && (
+							<>
+								{" "}
+								or DM the studio on{" "}
+								<Link
+									href={socials.instagram}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue underline"
+								>
+									Instagram
+								</Link>
+							</>
+						)}
+						.
+					</p>
 				</div>
 			</section>
 
