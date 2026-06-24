@@ -1,21 +1,210 @@
-import Illustration from "@/components/icons/Illustration";
+import Link from "next/link";
+import Image from "next/image";
 import PrimaryLogo from "@/components/icons/PrimaryLogo";
+import Illustration from "@/components/icons/Illustration";
+import StarCharm from "@/components/icons/StarCharm";
+import {
+	business,
+	contact,
+	location,
+	availability,
+	stylists,
+	gallery,
+	reviews,
+} from "./site";
 
 export default function Home() {
 	return (
-		<div className="flex min-h-screen flex-col items-center bg-sage px-6 [&:has(a:hover)_svg]:text-brown [&:has(a:active)_svg]:text-brown">
-			<PrimaryLogo className="mt-8 w-40 text-light-blue transition-colors duration-300 md:w-64" />
-			<div className="flex flex-1 items-center justify-center">
-				<a
-					href="https://app.squareup.com/appointments/buyer/widget/6o52ec1jl8364f/L1Y7A1WJ7A1MW"
-					className="inline-block rounded bg-light-blue px-8 py-3 text-center font-dreamboat-thin text-base uppercase tracking-widest text-sage transition-colors duration-300 hover:bg-brown active:bg-brown md:px-10 md:py-4 md:text-lg"
-				>
-					Book an appointment
-				</a>
-			</div>
-			<div className="flex justify-center pb-8">
-				<Illustration className="w-32 text-light-blue transition-colors duration-300 md:w-48" />
-			</div>
+		<div className="bg-sage">
+			{/* Hero */}
+			<section className="animate-fade-in flex flex-col items-center px-6 pt-10 pb-16 text-center">
+				<PrimaryLogo className="w-52 text-blue md:w-72" />
+				<p className="mt-6 max-w-xl font-dreamboat-thin text-lg uppercase tracking-widest text-brown md:text-xl">
+					{business.tagline}
+				</p>
+				<div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+					<Link
+						href="/contact"
+						className="inline-block rounded bg-blue px-8 py-3 font-dreamboat-thin text-base uppercase tracking-widest text-sage transition-colors duration-300 hover:bg-brown md:px-10 md:py-4"
+					>
+						Book with us
+					</Link>
+					<Link
+						href="/services"
+						className="inline-block rounded border border-blue px-8 py-3 font-dreamboat-thin text-base uppercase tracking-widest text-blue transition-colors duration-300 hover:bg-blue hover:text-sage md:px-10 md:py-4"
+					>
+						Our services
+					</Link>
+				</div>
+				<Illustration className="mt-12 w-28 text-light-blue md:w-36" />
+			</section>
+
+			{/* Welcome */}
+			<section className="bg-white px-6 py-16">
+				<div className="mx-auto max-w-2xl text-center">
+					<StarCharm className="mx-auto w-12 text-orange" />
+					<p className="mt-6 font-dreamboat text-2xl leading-relaxed text-blue md:text-3xl">
+						{business.description}
+					</p>
+				</div>
+			</section>
+
+			{/* Stylists */}
+			<section className="px-6 py-16">
+				<h2 className="text-center font-dreamboat text-3xl text-blue md:text-4xl">
+					Meet your stylists
+				</h2>
+				<div className="mx-auto mt-10 grid max-w-3xl gap-8 md:grid-cols-2">
+					{stylists.map((s) => (
+						<div key={s.name} className="rounded-lg bg-white p-6 text-center shadow-sm">
+							<div className="relative mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-light-blue/40">
+								{s.photo ? (
+									<Image
+										src={s.photo}
+										alt={`Portrait of ${s.name}, hairstylist at Lucky Hare Salon`}
+										fill
+										sizes="96px"
+										className="object-cover"
+									/>
+								) : (
+									<span className="font-dreamboat text-3xl text-blue">{s.name.charAt(0)}</span>
+								)}
+							</div>
+							<p className="mt-4 font-dreamboat text-2xl text-blue">{s.name}</p>
+							<p className="mt-1 font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
+								{s.role}
+							</p>
+							{s.specialties.length > 0 && (
+								<p className="mt-3 text-sm text-foreground/70">
+									{s.specialties.join(" · ")}
+								</p>
+							)}
+							<Link
+								href="/about"
+								className="mt-4 inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+							>
+								Read more
+							</Link>
+						</div>
+					))}
+				</div>
+			</section>
+
+			{/* Our work — teaser strip linking to the full gallery */}
+			{gallery.length > 0 && (
+				<section className="bg-white px-6 py-16">
+					<h2 className="text-center font-dreamboat text-3xl text-blue md:text-4xl">
+						Our work
+					</h2>
+					<div className="mx-auto mt-10 grid max-w-5xl grid-cols-3 gap-3 md:grid-cols-6 md:gap-4">
+						{gallery.slice(0, 6).map((img) => (
+							<Link
+								key={img.src}
+								href="/gallery"
+								className="group relative aspect-[3/4] overflow-hidden rounded-lg bg-light-blue/40 shadow-sm"
+							>
+								<Image
+									src={img.src}
+									alt={img.alt}
+									fill
+									sizes="(min-width: 768px) 16vw, 33vw"
+									className="object-cover transition-transform duration-500 group-hover:scale-105"
+								/>
+								<div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-2 pb-1.5 pt-6">
+									<span className="font-dreamboat-thin text-[9px] uppercase tracking-wide text-white/95 md:text-[10px]">
+										Hair by {img.stylist}
+									</span>
+								</div>
+							</Link>
+						))}
+					</div>
+					<div className="mt-8 text-center">
+						<Link
+							href="/gallery"
+							className="inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+						>
+							View the gallery
+						</Link>
+					</div>
+				</section>
+			)}
+
+			{/* Studio snapshot */}
+			<section className="bg-light-blue/40 px-6 py-16">
+				<div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
+					<div>
+						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">The studio</h2>
+						<address className="mt-4 not-italic leading-relaxed text-foreground/80">
+							{location.street}
+							<br />
+							{location.suite}
+							<br />
+							{location.city}, {location.state} {location.zip}
+						</address>
+						<Link
+							href="/location"
+							className="mt-4 inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+						>
+							Directions & parking
+						</Link>
+					</div>
+					<div>
+						<h2 className="font-dreamboat text-2xl text-blue md:text-3xl">Booking</h2>
+						<p className="mt-4 leading-relaxed text-foreground/80">
+							Lucky Hare is a private studio — {availability.summary.toLowerCase()}
+							{availability.days ? `, ${availability.days}` : ""}. Reach out and
+							we’ll find a time that works for you.
+						</p>
+						<Link
+							href="/contact"
+							className="mt-4 inline-block font-dreamboat-thin text-sm uppercase tracking-widest text-blue underline transition-colors hover:text-brown"
+						>
+							Request an appointment
+						</Link>
+					</div>
+				</div>
+			</section>
+
+			{/* Reviews — only render if real reviews exist */}
+			{reviews.length > 0 && (
+				<section className="px-6 py-16">
+					<h2 className="text-center font-dreamboat text-3xl text-blue md:text-4xl">
+						Kind words
+					</h2>
+					<div className="mx-auto mt-10 grid max-w-4xl gap-8 md:grid-cols-2">
+						{reviews.map((r, i) => (
+							<blockquote key={i} className="rounded-lg bg-white p-6 shadow-sm">
+								<p className="text-lg italic text-foreground/80">“{r.quote}”</p>
+								<footer className="mt-3 font-dreamboat-thin text-sm uppercase tracking-widest text-brown">
+									— {r.author}
+								</footer>
+							</blockquote>
+						))}
+					</div>
+				</section>
+			)}
+
+			{/* Contact CTA */}
+			<section className="bg-blue px-6 py-16 text-center text-sage">
+				<h2 className="font-dreamboat text-3xl md:text-4xl">Ready for a fresh look?</h2>
+				<p className="mt-3 font-dreamboat-thin uppercase tracking-widest text-light-blue">
+					Text, call, email, or DM to book
+				</p>
+				<div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+					<a
+						href={`mailto:${contact.bookingEmail}`}
+						className="inline-block rounded bg-sage px-8 py-3 font-dreamboat-thin text-base uppercase tracking-widest text-blue transition-colors duration-300 hover:bg-light-blue"
+					>
+						Email to book
+					</a>
+					<Link
+						href="/contact"
+						className="inline-block rounded border border-sage px-8 py-3 font-dreamboat-thin text-base uppercase tracking-widest text-sage transition-colors duration-300 hover:bg-sage hover:text-blue"
+					>
+						All contact options
+					</Link>
+				</div>
+			</section>
 		</div>
 	);
 }
