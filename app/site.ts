@@ -108,7 +108,7 @@ export const stylists: Stylist[] = [
 		bio: "I'm Devon! Originally from the Reno/Tahoe area in Nevada, I've called Austin home for the past five years. An introvert at heart, I strive to create a calm space where you can just be yourself — a safe space to express who you are, no matter how you identify.",
 		instagram: "https://instagram.com/devluckyhare",
 		photo: "/stylists/devon.webp",
-		bookingNote: "Text, email devon@luckyharesalon.com, or DM on Instagram to request an appointment with Devon.",
+		bookingNote: "Text, email devon@luckyharesalon.com, or DM on Instagram to request an appointment with Devon. Silent appointments are always welcome — just say the word.",
 	},
 	{
 		name: "Neva Gregory",
@@ -120,7 +120,7 @@ export const stylists: Stylist[] = [
 		bio: "I'm Neva. I moved to Austin right after graduating high school in Lawrence, KS and started doing hair shortly after. I specialize in low-maintenance, lived-in color and cuts — my goal is to give you hair that needs minimal styling and upkeep. I love working out of a private suite where you can be comfortable, whatever that looks like for you.",
 		instagram: "https://instagram.com/neva.does.hair",
 		photo: "/stylists/neva.webp",
-		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
+		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva. Silent appointments are always welcome — just say the word.",
 	},
 ];
 
@@ -212,13 +212,13 @@ export const serviceMenus: StylistMenu[] = [
 				category: "Lightening",
 				items: [
 					{ name: "Blonding", price: "$330" },
-					{ name: "Full lightening", price: "$260" },
+					{ name: "Full lightening", price: "$270" },
 					{ name: "Partial", price: "$230" },
 					{ name: "Mini", price: "$200" },
-					{ name: "Grey coverage + full", price: "$295" },
-					{ name: "Grey coverage + partial", price: "$275" },
-					{ name: "Grey coverage + mini", price: "$255" },
+					{ name: "Grey coverage + partial", price: "$305" },
+					{ name: "Grey coverage + mini", price: "$265" },
 					{ name: "Highs & lows", price: "$270" },
+					{ name: "Express toner", price: "$45", description: "No blow-dry" },
 				],
 			},
 		],
@@ -230,20 +230,36 @@ export const serviceMenus: StylistMenu[] = [
 export type GalleryImage = { src: string; alt: string; stylist: string };
 // Order matters: the first images lead the gallery page AND feed the homepage
 // teaser strip (gallery.slice(0, 6)), so the top six are a deliberate, varied spread.
+// Devon and Neva interleaved so the homepage teaser (gallery.slice(0,6)) and the
+// gallery's lead show both stylists' work. Devon = vivid/fantasy color; Neva =
+// dimensional blondes, bronde balayage, lived-in brunettes.
 export const gallery: GalleryImage[] = [
 	{ src: "/gallery/devon-01.webp", alt: "Rainbow color melt with curtain bangs", stylist: "Devon" },
+	{ src: "/gallery/neva-01.webp", alt: "Long blonde balayage with layered ends, back view", stylist: "Neva" },
 	{ src: "/gallery/devon-07.webp", alt: "Electric blue streaks through black hair", stylist: "Devon" },
+	{ src: "/gallery/neva-02.webp", alt: "Soft brunette waves with a face-framing money piece", stylist: "Neva" },
 	{ src: "/gallery/devon-11.webp", alt: "Blonde balayage with loose waves", stylist: "Devon" },
+	{ src: "/gallery/neva-03.webp", alt: "Long, sleek dimensional blonde with a bright money piece", stylist: "Neva" },
 	{ src: "/gallery/devon-08.webp", alt: "Green pixie cut with a red money piece", stylist: "Devon" },
+	{ src: "/gallery/neva-04.webp", alt: "Lived-in dimensional blonde, smoothed straight", stylist: "Neva" },
 	{ src: "/gallery/devon-05.webp", alt: "Vivid magenta-pink color, front view", stylist: "Devon" },
+	{ src: "/gallery/neva-05.webp", alt: "Warm bronde balayage on long waves", stylist: "Neva" },
 	{ src: "/gallery/devon-03.webp", alt: "Fiery orange-to-purple color in side-swept waves", stylist: "Devon" },
+	{ src: "/gallery/neva-06.webp", alt: "Lived-in bronde with soft blonde-kissed waves", stylist: "Neva" },
 	{ src: "/gallery/devon-02.webp", alt: "Multi-tonal rainbow color on long layered waves", stylist: "Devon" },
+	{ src: "/gallery/neva-07.webp", alt: "Bright blonde beachy waves", stylist: "Neva" },
 	{ src: "/gallery/devon-09.webp", alt: "Teal-to-blue ombre on natural curls", stylist: "Devon" },
+	{ src: "/gallery/neva-08.webp", alt: "Dimensional blonde with soft waves and a money piece", stylist: "Neva" },
 	{ src: "/gallery/devon-12.webp", alt: "Glossy burgundy waves", stylist: "Devon" },
+	{ src: "/gallery/neva-09.webp", alt: "Low-maintenance brunette with subtle dimension", stylist: "Neva" },
 	{ src: "/gallery/devon-04.webp", alt: "Magenta and pink color, side profile", stylist: "Devon" },
+	{ src: "/gallery/neva-10.webp", alt: "Lived-in bronde with face-framing layers", stylist: "Neva" },
 	{ src: "/gallery/devon-06.webp", alt: "Bright pink color with a soft shadow root", stylist: "Devon" },
+	{ src: "/gallery/neva-11.webp", alt: "Long bronde balayage with sun-kissed dimension", stylist: "Neva" },
 	{ src: "/gallery/devon-10.webp", alt: "Soft violet money piece on dark hair", stylist: "Devon" },
+	{ src: "/gallery/neva-12.webp", alt: "Sleek, dimensional blonde worn straight", stylist: "Neva" },
 	{ src: "/gallery/devon-13.webp", alt: "Rich red-burgundy color, front view", stylist: "Devon" },
+	{ src: "/gallery/neva-13.webp", alt: "Effortless lived-in bronde, long waves", stylist: "Neva" },
 	{ src: "/gallery/devon-14.webp", alt: "Dark bob blended to blonde ends", stylist: "Devon" },
 ];
 
