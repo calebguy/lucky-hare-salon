@@ -17,8 +17,10 @@ DM**, and the studio is **by appointment only** (no walk-ins, no posted business
 - **Next.js 16** (App Router) · **React 19** · **TypeScript 5**
 - **Tailwind CSS v4** (config-less; theme tokens live in `app/globals.css` via `@theme`)
 - **Bun** as package manager (`bun.lock`)
-- Hosting: **Vercel** · DNS: **Cloudflare** · Email: **Zoho** · domain `www.luckyharesalon.com`
-- Analytics: Vercel **Web Analytics** + **Speed Insights** (mounted in `app/layout.tsx`)
+- Hosting: **Cloudflare Pages** (static export, `output: "export"` → `out/`) · DNS: **Cloudflare**
+  · Email: **Zoho** · domain `www.luckyharesalon.com`
+- Deploys from a fork via an auto-sync robot — see **`README.md`** (Architecture & Previews). No
+  analytics currently wired in.
 
 ## Commands
 
@@ -44,15 +46,15 @@ Key shapes in `site.ts`:
 - `stylists[]` — each has `name` (full, used as heading), `firstName` (friendly CTAs),
   **its own `phone`** (Devon and Neva each take clients on their own number — there is no
   shared salon line), `specialties`, `bio`, `instagram`, `photo`, `bookingNote`.
-- `services[]`, `reviews[]`
+- `serviceMenus[]` (per-stylist pricing menus), `gallery[]` (work photos), `reviews[]`
 
 ## Project layout
 
 ```
 app/
-  layout.tsx        # fonts, metadata, HairSalon JSON-LD, Nav/Footer, Analytics
+  layout.tsx        # fonts, metadata, HairSalon JSON-LD, Nav/Footer
   page.tsx          # home
-  about|services|location|contact/page.tsx
+  about|services|gallery|location|contact/page.tsx
   site.ts           # ← all content
   globals.css       # brand tokens (colors + fonts) and base styles
   sitemap.ts, robots.ts, icon.tsx, opengraph-image.png, twitter-image.png
@@ -80,17 +82,31 @@ fonts/              # TAYDreamboat.otf (+ Thin) — local display font
 
 - **No fabricated content.** `reviews[]` stays empty until there are real reviews — do
   **not** invent any. Same for bios/services: leave `TODO` rather than make things up.
-- **No secrets in the repo.** Use Vercel env vars if anything is ever needed.
-- Publish **business numbers**, not personal cells; strip EXIF/GPS from photos before
-  adding them to `/public/stylists/`.
+- **No secrets in the repo** (it's public).
+- Strip **EXIF/GPS** from photos before adding them to `/public` and convert to WebP — use
+  `cwebp -metadata none` (`sips` alone does NOT remove GPS). Applies to stylist portraits
+  *and* client/gallery photos.
 - Run `bun run build` before committing UI changes; the build type-checks.
 
-## Status / next steps
+## Status
 
-- Active work happens on the **`site-buildout`** branch (the polished multi-page site);
-  `main` holds the original single-page landing. Launch = merge `site-buildout` → `main`.
-- Before launch, fill the `TODO`s in `site.ts` (phones, address, parking, bios,
-  services/pricing, Instagram handles, photos). Owners have a plain-language fill-in doc
-  (kept on Alex's machine, outside the repo).
-- After launch: redirect the old `.salon` domain → `.com`, then Google Business Profile
-  and other listings.
+- **Launched** — live on Cloudflare Pages at `www.luckyharesalon.com`, with real content for both
+  stylists. The old `luckyhare.salon` domain 301-redirects to the `.com`.
+- **This repo (`calebguy/lucky-hare-salon`, `main`) is the canonical source of truth.** Hosting builds
+  from a fork via an auto-sync robot — see **`README.md`** for the architecture, the change/PR workflow,
+  and how to get a Cloudflare **preview URL** before merging.
+
+## How to make a change
+
+1. Branch off `main`; edit content in `app/site.ts` (or the relevant page).
+2. `bun run build` to type-check.
+3. Push the branch to the **deploy fork** for a preview (`README.md` → Previews).
+4. Open a PR into `main`; review the preview; merge. It auto-deploys (~10 min, or trigger the sync
+   workflow for an instant deploy — see `README.md`).
+
+## Loose ends / future
+
+- Cancel Google Workspace on the old `.salon` domain + strip its leftover Google DNS records
+  (coordinate with Caleb).
+- Google Business Profile + other listings (Apple/Bing/Yelp); keep NAP consistent.
+- Surface real `reviews[]` as they come in (never fabricate).
