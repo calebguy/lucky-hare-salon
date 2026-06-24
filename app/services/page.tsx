@@ -94,6 +94,10 @@ export default function Services() {
 						</div>
 					))}
 				</div>
+				<p className="mx-auto mt-10 max-w-3xl text-sm italic text-foreground/60">
+					* Pricing is subject to change based on the amount of color or lightener your hair
+					needs — reach out for an exact quote.
+				</p>
 			</section>
 
 			<section className="bg-light-blue/40 px-6 py-12 text-center">
