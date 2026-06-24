@@ -108,7 +108,7 @@ export const stylists: Stylist[] = [
 		bio: "I'm Devon! Originally from the Reno/Tahoe area in Nevada, I've called Austin home for the past five years. An introvert at heart, I strive to create a calm space where you can just be yourself — a safe space to express who you are, no matter how you identify.",
 		instagram: "https://instagram.com/devluckyhare",
 		photo: "/stylists/devon.webp",
-		bookingNote: "Text, email devon@luckyharesalon.com, or DM on Instagram to request an appointment with Devon. Silent appointments are always welcome — just say the word.",
+		bookingNote: "Text, email devon@luckyharesalon.com, or DM on Instagram to request an appointment with Devon.",
 	},
 	{
 		name: "Neva Gregory",
@@ -120,7 +120,7 @@ export const stylists: Stylist[] = [
 		bio: "I'm Neva. I moved to Austin right after graduating high school in Lawrence, KS and started doing hair shortly after. I specialize in low-maintenance, lived-in color and cuts — my goal is to give you hair that needs minimal styling and upkeep. I love working out of a private suite where you can be comfortable, whatever that looks like for you.",
 		instagram: "https://instagram.com/neva.does.hair",
 		photo: "/stylists/neva.webp",
-		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva. Silent appointments are always welcome — just say the word.",
+		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
 	},
 ];
 

@@ -18,7 +18,8 @@ export default function Contact() {
 				<h1 className="mt-4 font-dreamboat text-4xl text-blue md:text-5xl">Get in touch</h1>
 				<p className="mx-auto mt-4 max-w-xl text-foreground/70">
 					We book by text, call, email, and Instagram DM — no online scheduler. Reach out and
-					we’ll find a time that works. New clients are always welcome.
+					we’ll find a time that works. New clients are always welcome — and so are silent
+					appointments, just let us know.
 				</p>
 			</section>
 
