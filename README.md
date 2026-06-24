@@ -41,9 +41,13 @@ bun run lint
 
 1. Branch off `main` and make your edits (usually just `app/site.ts`).
 2. `bun run build` to type-check it.
-3. **Push the branch to the deploy fork** to get a live preview URL (see **Previews**).
-4. Open a **pull request into `main` of this repo** (the canonical repo).
+3. **Push the branch to the deploy fork** for a live preview URL (see **Previews**).
+4. **Push the same branch to this canonical repo** and open a **pull request into `main`**.
 5. Review the preview, then merge. It deploys automatically (see **Architecture**).
+
+> The fork and this repo share history but are **not** linked as a GitHub fork, so you push
+> each working branch to **both**: the fork (for the Cloudflare preview) and this repo (for
+> the PR). Two remotes, one branch.
 
 ## Previews
 
