@@ -119,8 +119,7 @@ export const stylists: Stylist[] = [
 		specialties: ["Dimensional blondes & brunettes", "Lived-in, low-maintenance color", "Cuts"],
 		bio: "I'm Neva. I moved to Austin right after graduating high school in Lawrence, KS and started doing hair shortly after. I specialize in low-maintenance, lived-in color and cuts — my goal is to give you hair that needs minimal styling and upkeep. I love working out of a private suite where you can be comfortable, whatever that looks like for you.",
 		instagram: "https://instagram.com/neva.does.hair",
-		// TODO: Neva — photo pending (shows an initials fallback until added).
-		photo: "",
+		photo: "/stylists/neva.webp",
 		bookingNote: "Text, email neva@luckyharesalon.com, or DM on Instagram to request an appointment with Neva.",
 	},
 ];
