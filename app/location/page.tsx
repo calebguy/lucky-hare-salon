@@ -90,6 +90,15 @@ export default function Location() {
 						</p>
 					</div>
 				</div>
+
+				{location.accessibility && (
+					<div className="mx-auto mt-8 max-w-4xl rounded-lg bg-white p-6 shadow-sm">
+						<h2 className="font-dreamboat text-2xl text-blue">Accessibility</h2>
+						<p className="mt-3 leading-relaxed text-foreground/80">
+							{location.accessibility}
+						</p>
+					</div>
+				)}
 			</section>
 		</div>
 	);
