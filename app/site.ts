@@ -58,6 +58,9 @@ export const location = {
 	// Map links. Replace once the listing exists; a plain query works meanwhile.
 	googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
 	appleMapsUrl: "https://maps.apple.com/?q=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
+	// Google Business Profile "leave a review" short-link. Empty string hides the
+	// footer review link until the listing exists.
+	googleReviewUrl: "https://g.page/r/CXsg_Tdvcyr8EBI/review",
 };
 
 // Lucky Hare is a private studio — appointment only, no walk-ins. We deliberately

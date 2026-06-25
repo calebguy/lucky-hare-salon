@@ -60,6 +60,18 @@ export default function Footer() {
 								</Link>
 							</li>
 						)}
+						{location.googleReviewUrl && (
+							<li>
+								<Link
+									href={location.googleReviewUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline hover:text-sage"
+								>
+									Review us on Google
+								</Link>
+							</li>
+						)}
 					</ul>
 				</div>
 			</div>
