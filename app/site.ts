@@ -33,7 +33,7 @@ export const contact = {
 
 export const location = {
 	street: "5350 Burnet Rd",
-	suite: "Suite 306",
+	suite: "Suite 304",
 	city: "Austin",
 	state: "TX",
 	zip: "78756",
@@ -56,8 +56,8 @@ export const location = {
 	parking:
 		"There's a free parking garage attached to the building, plus street parking on Lawnmont St.",
 	// Map links. Replace once the listing exists; a plain query works meanwhile.
-	googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
-	appleMapsUrl: "https://maps.apple.com/?q=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
+	googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5350+Burnet+Rd+Suite+304+Austin+TX+78756",
+	appleMapsUrl: "https://maps.apple.com/?q=5350+Burnet+Rd+Suite+304+Austin+TX+78756",
 	// Google Business Profile "leave a review" short-link. Empty string hides the
 	// footer review link until the listing exists.
 	googleReviewUrl: "https://g.page/r/CXsg_Tdvcyr8EBI/review",
