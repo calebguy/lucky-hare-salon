@@ -33,7 +33,7 @@ export const contact = {
 
 export const location = {
 	street: "5350 Burnet Rd",
-	suite: "Suite 306",
+	suite: "Suite 304",
 	city: "Austin",
 	state: "TX",
 	zip: "78756",
@@ -60,8 +60,8 @@ export const location = {
 	accessibility:
 		"The studio is wheelchair accessible. The parking garage has handicap spaces near the entrance, and a ramp on the left-hand side leads up to the My Salon Suites entrance — heads up, it can be a little steep. The entrance has two heavy, pull-to-open doors with a small lobby between them; if you'd like a hand getting in, call or text when you arrive and one of us will come out to meet you. The hallways and our suite have room for a wheelchair, and we're glad to rearrange to make you comfortable. If you have a specific access need, reach out before your visit and we'll make sure everything's ready.",
 	// Map links. Replace once the listing exists; a plain query works meanwhile.
-	googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
-	appleMapsUrl: "https://maps.apple.com/?q=5350+Burnet+Rd+Suite+306+Austin+TX+78756",
+	googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5350+Burnet+Rd+Suite+304+Austin+TX+78756",
+	appleMapsUrl: "https://maps.apple.com/?q=5350+Burnet+Rd+Suite+304+Austin+TX+78756",
 	// Google Business Profile "leave a review" short-link. Empty string hides the
 	// footer review link until the listing exists.
 	googleReviewUrl: "https://g.page/r/CXsg_Tdvcyr8EBI/review",
