@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import StarCharm from "@/components/icons/StarCharm";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { business, gallery } from "../site";
 
 export const metadata: Metadata = {
@@ -15,10 +15,12 @@ export default function Gallery() {
 		<div className="bg-sage">
 			<section className="px-6 pt-12 pb-10 text-center">
 				<StarCharm className="mx-auto w-12 text-orange" />
-				<h1 className="mt-4 font-dreamboat text-4xl text-blue md:text-5xl">Gallery</h1>
+				<h1 className="mt-4 font-dreamboat text-4xl text-blue md:text-5xl">
+					Gallery
+				</h1>
 				<p className="mx-auto mt-4 max-w-2xl text-foreground/70">
-					A few of our favorite looks — vivid fantasy color, lived-in blondes, and fresh cuts.
-					These are Devon’s; Neva’s work is coming soon.
+					A few of our favorite looks — vivid fantasy color, lived-in blondes,
+					and fresh cuts.
 				</p>
 			</section>
 
@@ -47,7 +49,9 @@ export default function Gallery() {
 			</section>
 
 			<section className="bg-blue px-6 py-16 text-center text-sage">
-				<h2 className="font-dreamboat text-3xl md:text-4xl">Love what you see?</h2>
+				<h2 className="font-dreamboat text-3xl md:text-4xl">
+					Love what you see?
+				</h2>
 				<p className="mt-3 font-dreamboat-thin uppercase tracking-widest text-light-blue">
 					Text, call, email, or DM to book
 				</p>
